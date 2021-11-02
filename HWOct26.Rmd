@@ -1,0 +1,123 @@
+---
+title: "The homework for the next class, Tuesday, Oct 26th"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+  pdf_document: default
+---
+
+The homework for the next class, Tuesday, Oct 26th
+
+I would want to ask you to pick a data set from `MASS` package and make a description of it in a simple text file (a TXT file will do) using the tools I have shown you in the class.  
+
+Checking whether `MASS` package is installed and loading it:
+
+```{r}
+library(MASS)
+```
+
+Checking out the list of the data sets available in the `MASS` package:
+
+```{r, eval=FALSE}
+MASS::
+```
+
+
+Let's say, you chose `Cars93` (`MASS::Cars93`) data set to be the object of your study.
+
+Assigning `Cars93` to a variable:
+
+```{r}
+x <- MASS::Cars93
+```
+
+Finding out the dimension of `x` (the variable contains `Cars93` data set):
+
+```{r}
+dim(x)
+```
+
+Data set `Cars93` is 93 lines long and 27 columns wide, that is, `Cars93` data frame contains 93 observations (cases, cars) described by 27 various features (parameters).
+
+
+Structure of the data frame - name, type and preview of data in each column:
+
+```{r}
+str(x)
+```
+
+Checking out the names of the features (the column's names of `Cars93` data set), one by one:
+
+```{r}
+names(x)
+```
+
+Checking out the first six 6 of lines of `x` (that contains `Cars93` data set):
+
+```{r}
+head(x)
+```
+
+Take a look at each variable of `x`:
+
+```{r}
+x$Manufacturer
+```
+
+```{r}
+x$Model
+```
+
+```{r}
+x$Type
+```
+
+```{r}
+x$Min.Price
+```
+
+```{r}
+x$Price
+```
+
+```{r}
+x$Max.Price
+```
+
+and so on...
+
+
+Find out the type of each feature of `Cars93` data set
+
+```{r}
+class(x$Manufacturer)
+```
+
+```{r}
+class(x$Model)
+```
+```{r}
+class(x$Type)
+```
+
+```{r}
+class(x$Min.Price)
+```
+```{r}
+class(x$Price)
+```
+
+```{r}
+class(x$Max.Price)
+```
+
+
+Checking out the names of all features of `Cars93` data set at once:
+
+```{r}
+sapply(x, class)
+```
+
+and so on...
+
